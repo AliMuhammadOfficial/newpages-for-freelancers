@@ -4,53 +4,326 @@
 export const runtime = "edge";
 
 export async function fetchResults() {
-	const url = process.env.NEXT_PUBLIC_FETCH_ALL_LISTINGS_URL;
-	if (!url) {
-		throw new Error(
-			"NEXT_PUBLIC_FETCH_ALL_LISTINGS_URL environment variable is not defined"
-		);
-	}
+  const url = process.env.NEXT_PUBLIC_FETCH_ALL_LISTINGS_URL;
+  if (!url) {
+    throw new Error(
+      "NEXT_PUBLIC_FETCH_ALL_LISTINGS_URL environment variable is not defined"
+    );
+  }
 
-	const environment = process.env.NEXT_PUBLIC_ENVIRONMENT;
-	const secret = process.env.NEXT_PUBLIC_SECRET;
+  const environment = process.env.NEXT_PUBLIC_ENVIRONMENT;
+  const secret = process.env.NEXT_PUBLIC_SECRET;
 
-	if (!environment || !secret) {
-		throw new Error(
-			"Environment variables for environment or secret are not defined"
-		);
-	}
+  if (!environment || !secret) {
+    throw new Error(
+      "Environment variables for environment or secret are not defined"
+    );
+  }
 
-	try {
-		console.log("here url ", url);
+  try {
+    console.log("here url ", url);
 
-		const response = await fetch(url, {
-			method: "GET",
-			cache: "no-store",
-			headers: {
-				"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-				"Content-Type": "application/json",
-				Environment: environment,
-				Secret: secret,
-				"Access-Control-Allow-Origin": "*",
-			} as HeadersInit,
-		});
+    // const response = await fetch(url, {
+    // 	method: "GET",
+    // 	cache: "no-store",
+    // 	headers: {
+    // 		"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    // 		"Content-Type": "application/json",
+    // 		Environment: environment,
+    // 		Secret: secret,
+    // 		"Access-Control-Allow-Origin": "*",
+    // 	} as HeadersInit,
+    // });
 
-		console.log("heree 2", response);
-		console.log("heree 2", response.ok);
+    // console.log("heree 2", response);
+    // console.log("heree 2", response.ok);
 
-		if (!response.ok) {
-			// Log the raw response
-			throw new Error("Network response was not ok");
-		}
+    // if (!response.ok) {
+    // 	// Log the raw response
+    // 	throw new Error("Network response was not ok");
+    // }
 
-		const text = await response.text();
-		console.log("Raw response:", text);
+    // const text = await response.text();
+    // console.log("Raw response:", text);
 
-		// Parse the JSON
-		const result = JSON.parse(text);
-		return result;
-	} catch (error) {
-		console.error("Error fetching data:", error);
-		throw error; // Propagate the error for handling in the component
-	}
+    // // Parse the JSON
+    // const result = JSON.parse(text);
+    const result = {
+      data: [
+        {
+          url: "https://sales.bww-law.com/Culpeper%20County",
+          jurisdiction: "Culpeper County",
+          fileId: "VA-354037-3",
+          saleDate: "08/01/2024",
+          saleTime: "12:00",
+          address: "12687 Chestnut Lane",
+          city: "Rixeyville",
+          zip: "22737",
+          originalLoanAmount: "$254,375.00",
+          images: [],
+          videos: [],
+          source: "BWW",
+          id: "0000eb5b-dcc3-440c-9896-411cf9028bcb",
+          checksum:
+            "e4906a6ef3a0725e428c854cdb588c5052a13ac79962de8a3b0679869a36e241",
+          propertyId: "8323a951-29d7-48dc-a220-38bbbe1a9a54",
+        },
+        {
+          url: "https://sales.bww-law.com/Culpeper%20County",
+          jurisdiction: "Culpeper County",
+          fileId: "VA-354037-3",
+          saleDate: "08/01/2024",
+          saleTime: "12:00",
+          address: "12687 Chestnut Lane",
+          city: "Rixeyville",
+          zip: "22737",
+          originalLoanAmount: "$254,375.00",
+          images: [],
+          videos: [],
+          source: "BWW",
+          id: "0000eb5b-dcc3-440c-9896-411cf9028bcb",
+          checksum:
+            "e4906a6ef3a0725e428c854cdb588c5052a13ac79962de8a3b0679869a36e241",
+          propertyId: "8323a951-29d7-48dc-a220-38bbbe1a9a54",
+        },
+        {
+          url: "https://sales.bww-law.com/Culpeper%20County",
+          jurisdiction: "Culpeper County",
+          fileId: "VA-354037-3",
+          saleDate: "08/01/2024",
+          saleTime: "12:00",
+          address: "12687 Chestnut Lane",
+          city: "Rixeyville",
+          zip: "22737",
+          originalLoanAmount: "$254,375.00",
+          images: [],
+          videos: [],
+          source: "BWW",
+          id: "0000eb5b-dcc3-440c-9896-411cf9028bcb",
+          checksum:
+            "e4906a6ef3a0725e428c854cdb588c5052a13ac79962de8a3b0679869a36e241",
+          propertyId: "8323a951-29d7-48dc-a220-38bbbe1a9a54",
+        },
+      ],
+      jurisdictions: [
+        "Rixeyville",
+        "Suffolk",
+        "Virginia Beach",
+        "Richmond",
+        "Berwyn Heights",
+        "Heathsville",
+        "Norfolk",
+        "Newport News",
+        "Basye",
+        "Hampton",
+        "Baltimore",
+        "Callao",
+        "Bear",
+        "Columbia",
+        "Midlothian",
+        "Claymont",
+        "Powhatan",
+        "Chesapeake",
+        "Roanoke",
+        "Madison",
+        "Hague",
+        "Martinsville",
+        "Vienna",
+        "Danville",
+        "Glen Burnie",
+        "Boyce",
+        "Earleville",
+        "Sterling",
+        "Madison Heights",
+        "Pasadena",
+        "Springfield",
+        "Locust Grove",
+        "Charlottesville",
+        "Seaford",
+        "Upper Marlboro",
+        "Oakton",
+        "Clifton",
+        "Laurel",
+        "Fredericksburg",
+        "Chantilly",
+        "New Castle",
+        "North Chesterfield",
+        "Hanover",
+        "Hyattsville",
+        "Leesburg",
+        "Gordonsville",
+        "Fairfax",
+        "Amherst",
+        "Concord",
+        "Portsmouth",
+        "Boones Mill",
+        "Jarratt",
+        "Radford",
+        "Junction",
+        "Churchville",
+        "Williamsburg",
+        "Ocean View",
+        "Lynchburg",
+        "Culpeper",
+        "Hayes",
+        "Federalsburg",
+        "Lincoln",
+        "Middleburg",
+        "Covington",
+        "Manassas",
+        "Woodbridge",
+        "Chesterfield",
+        "Herndon",
+        "Stanardsville",
+        "Moseley",
+        "South Boston",
+        "Yorktown",
+        "Beaverdam",
+        "Salem",
+        "Quinton",
+        "Middlebrook",
+        "Reston",
+        "Mechanicsville",
+        "Bristol",
+        "Wise",
+        "Woodford",
+        "Pamplin",
+        "Hurt",
+        "Hopewell",
+        "Providence Forge",
+        "HENRICO",
+        "Greenbackville",
+        "Dublin",
+        "Bristow",
+        "Cobbs Creek",
+        "Glen Allen",
+        "Ferrum",
+        "Amelia Court House",
+        "Marion",
+        "Colonial Beach",
+        "Lorton",
+        "Halethorpe",
+        "McLean",
+        "Saluda",
+        "Appomattox",
+        "Strasburg",
+        "Beach",
+        "Silver Spring",
+        "Troutville",
+        "Spotsylvania",
+        "Palmyra",
+        "Gainesville",
+        "Sandston",
+        "Dewitt",
+        "Wilmington",
+        "Vinton",
+        "Rustburg",
+        "Triangle",
+        "Jewell Ridge",
+        "Waynesboro",
+        "Fort Washington",
+        "Waldorf",
+        "Bethesda",
+        "Alexandria",
+        "Winchester",
+        "Petersburg",
+        "Delaware City",
+        "Wingina",
+        "Ashburn",
+        "Stuarts Draft",
+        "Newark",
+        "Midland",
+        "Gloucester Point",
+        "Dover",
+        "Centreville",
+        "Blue Ridge i/r/t/a Villamont",
+        "Fort Valley",
+        "Pounding Mill",
+        "Victoria",
+        "Pennington Gap",
+        "Brooklyn",
+        "Christiansburg",
+        "Highland Springs",
+        "Millsboro",
+        "Timberville",
+        "Potomac",
+        "Essex",
+        "Dumfries",
+        "Lusby",
+        "Crozet",
+        "Gwynn Oak",
+        "Stafford",
+        "Greenville",
+        "Leesburg a/r/t/a Lessburg",
+        "Craigsville",
+        "Clifton Forge",
+        "White Post",
+        "Dundalk",
+        "Tazewell",
+        "Landover",
+        "Smithfield",
+        "Carrsville",
+        "Lancaster",
+        "Luray",
+        "Chester",
+        "Glade Spring",
+        "Bridgeville",
+        "Milford",
+        "Farmville",
+        "Moneta",
+        "Partlow",
+        "Washington",
+        "Collinsville",
+        "Franklin",
+        "Huntingtown",
+        "Edinburg",
+        "Coeburn",
+        "Rocky Mount",
+        "Smyrna",
+        "Staunton",
+        "Nottingham",
+        "Germantown",
+        "Berryville",
+        "Henrico",
+        "Chevy Chase",
+        "Grottoes",
+        "Galax",
+        "Orange",
+        "Arlington",
+        "Cape Charles",
+        "Bel Air",
+        "Broadway",
+        "Warrenton",
+        "Wintergreen Resort",
+        "Hagerstown",
+        "Richlands",
+        "Axton",
+        "Manchester",
+        "Houston",
+        "Kents Store",
+        "Pocomoke City",
+        "Afton",
+        "Buchanan",
+        "Troy",
+        "Havre De Grace",
+        "Edgewood",
+        "Carson",
+        "Lewes",
+        "Bluefield",
+        "Greenbush",
+        "Woodstock",
+        "Rhoadesville",
+        "Bowling Green",
+        "Great Falls",
+        "Boydton",
+        "Bent Mountain",
+        "Arnold",
+        "Taneytown",
+      ],
+    };
+    return result;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error; // Propagate the error for handling in the component
+  }
 }
