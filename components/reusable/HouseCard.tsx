@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 
 // import { HouseCardProps } from "@/interfaces/interfaces";
 import PropertyCard2 from "./PropertyCard";
 import PropertyCardSkeleton from "./PropertyCardSkeleton";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 // Displays the Properties and Gets the data from the API
 
