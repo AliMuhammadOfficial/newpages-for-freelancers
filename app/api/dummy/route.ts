@@ -1,0 +1,103 @@
+export const runtime = "experimental-edge";
+
+export async function GET() {
+  const data = [
+    {
+      url: "https://sales.bww-law.com/Culpeper%20County",
+      jurisdiction: "Culpeper County",
+      fileId: "VA-354037-3",
+      saleDate: "08/01/2024",
+      saleTime: "12:00",
+      address: "12687 Chestnut Lane",
+      city: "Rixeyville",
+      zip: "22737",
+      originalLoanAmount: "$254,375.00",
+      images: [],
+      videos: [],
+      source: "BWW",
+      id: "0000eb5b-dcc3-440c-9896-411cf9028bcb",
+      checksum:
+        "e4906a6ef3a0725e428c854cdb588c5052a13ac79962de8a3b0679869a36e241",
+      propertyId: "8323a951-29d7-48dc-a220-38bbbe1a9a54",
+    },
+    {
+      source: "Orlans",
+      images: [],
+      videos: [],
+      fileId: "24-003375",
+      url: "https://matlsales.orlans.com/Sales.aspx24-003375",
+      status: "Cancelled",
+      address: "103 Cloverleaf Drive",
+      city: "Suffolk",
+      state: "VA",
+      zip: "23434",
+      country: "City of Suffolk, VA",
+      saleDate: "07/01/2024",
+      depositAmount: "",
+      saleLocation: "",
+      id: "00b6af67-51e0-45cc-881c-b4f307b4f607",
+      checksum:
+        "a562d5b6d145cbb2640795b2758eb787918c5d57a86bcfa6f8bc3397d1bb8cac",
+      propertyId: "cfd39d94-e431-4114-b214-1d7b97b54c36",
+    },
+    {
+      url: "https://sales.bww-law.com/Virginia%20Beach%20City",
+      jurisdiction: "Virginia Beach City",
+      fileId: "VA-370659-1",
+      saleDate: "09/03/2024",
+      saleTime: "12:00",
+      address: "1130 Princess Anne Road",
+      city: "Virginia Beach",
+      zip: "23457",
+      originalLoanAmount: "$173,724.00",
+      images: [],
+      videos: [],
+      source: "BWW",
+      id: "02459925-5fdb-41e6-92f8-bc63df3e748e",
+      checksum:
+        "005589319499de7d6f35700316ebf9e6b01136a5b139eb365b97197bbe85d44e",
+      propertyId: "a4d92b50-c8ba-45b5-949c-b4027deac2ba",
+    },
+    {
+      url: "https://sales.bww-law.com/Henrico%20County",
+      jurisdiction: "Henrico County",
+      fileId: "VA-370435-1",
+      saleDate: "07/29/2024",
+      saleTime: "15:30",
+      address: "2613 Lampworth Road",
+      city: "Richmond",
+      zip: "23231",
+      originalLoanAmount: "$95,900.00",
+      images: [],
+      videos: [],
+      source: "BWW",
+      id: "0286afb4-b828-4f08-9a98-1c16fb84321b",
+      checksum:
+        "4f661d12d91518650fc69cc3e96b3c3a16baa70521004fdd74471e5e75d050d9",
+      propertyId: "acbc4d54-b859-49e5-bd68-e5193d875907",
+    },
+    {
+      source: "Orlans",
+      images: [],
+      videos: [],
+      fileId: "23-009617",
+      url: "https://matlsales.orlans.com/Sales.aspx23-009617",
+      status: "Active",
+      address: "5607 Berwyn Rd",
+      city: "Berwyn Heights",
+      state: "MD",
+      zip: "20740",
+      country: "Prince George's, MD",
+      saleDate: "07/03/2024",
+      depositAmount: "$35,000.00",
+      saleLocation:
+        "Prince George's County Courthouse, located at Front of the Duval Wing of the Courthouse Complex 14735 Main St, Upper Marlboro, MD 20772",
+      id: "029d7ecb-de64-4784-baea-d848e08659da",
+      checksum:
+        "1a433c242e9d5111f1767b40e86cc17514e0f71d8de5f183448af35ea153c1fc",
+      propertyId: "3aebb2f8-bb92-4348-b0a9-21e1e246463f",
+    },
+  ];
+
+  return Response.json({data}, { status: 200 });
+}
