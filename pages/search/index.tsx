@@ -1,5 +1,3 @@
-export const runtime = "experimental-edge";
-
 import { House } from "@/interfaces/interfaces";
 import MainServerComponent from "@/components/reusable/MainServerComponent";
 import { fetchResults } from "../../kerkesa/fetchResults";

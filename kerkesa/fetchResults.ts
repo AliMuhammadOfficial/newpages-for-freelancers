@@ -1,6 +1,3 @@
-// Ensure this line is at the top of your file
-// fetch results
-
 export const runtime = "experimental-edge";
 
 export async function fetchResults() {

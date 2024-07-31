@@ -1,4 +1,3 @@
-export const runtime = "experimental-edge";
 
 import Home from "./home";
 
