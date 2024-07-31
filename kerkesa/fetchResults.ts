@@ -1,20 +1,22 @@
+import { NextResponse } from "next/server";
+
 export const runtime = "edge";
 
 export async function fetchResults() {
 	const url = process.env.NEXT_PUBLIC_FETCH_ALL_LISTINGS_URL;
 	if (!url) {
-		throw new Error(
-			"NEXT_PUBLIC_FETCH_ALL_LISTINGS_URL environment variable is not defined"
-		);
+		return NextResponse.json({
+			error: "Environment variable for fetch all listings URL is not defined",
+		});
 	}
 
 	const environment = process.env.NEXT_PUBLIC_ENVIRONMENT;
 	const secret = process.env.NEXT_PUBLIC_SECRET;
 
 	if (!environment || !secret) {
-		throw new Error(
-			"Environment variables for environment or secret are not defined"
-		);
+		return NextResponse.json({
+			error: "Environment variable for environment or secret is not defined",
+		});
 	}
 
 	try {
@@ -22,7 +24,6 @@ export async function fetchResults() {
 
 		const response = await fetch(url, {
 			method: "GET",
-			cache: "no-store",
 			headers: {
 				"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 				"Content-Type": "application/json",
@@ -36,8 +37,9 @@ export async function fetchResults() {
 		console.log("heree 2", response.ok);
 
 		if (!response.ok) {
-			// Log the raw response
-			throw new Error("Network response was not ok");
+			return NextResponse.json({
+				error: "Failed to fetch data: " + response.status,
+			});
 		}
 
 		const text = await response.text();
