@@ -1,4 +1,4 @@
-export const runtime = "experimental-edge";
+export const runtime = "edge";
 
 export async function fetchResults() {
 	const url = process.env.NEXT_PUBLIC_FETCH_ALL_LISTINGS_URL;
