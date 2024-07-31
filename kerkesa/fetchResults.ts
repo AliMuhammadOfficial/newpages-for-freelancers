@@ -1,7 +1,7 @@
 // Ensure this line is at the top of your file
 // fetch results
 
-export const runtime = "edge";
+export const runtime = "experimental-edge";
 
 export async function fetchResults() {
 	const url = process.env.NEXT_PUBLIC_FETCH_ALL_LISTINGS_URL;
