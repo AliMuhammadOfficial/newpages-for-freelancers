@@ -26,6 +26,7 @@ export async function GET() {
 
     const response = await fetch(url, {
       method: "GET",
+      cache: "no-store",
       headers: {
         "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Content-Type": "application/json",
